@@ -1,0 +1,84 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+
+	<meta name="description" content="The HTML5 Herald">
+	<meta name="author" content="SitePoint">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+	    crossorigin="anonymous">
+	<link rel="stylesheet" href="/style.css?v=1.0">
+
+	<!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+  <![endif]-->
+</head>
+
+<body>
+	<header>
+		<nav class="header-mobile-menu">
+			<a class="menu-account menu-item" href="#">
+				<i class="fas fa-user-circle fa-inverse"></i> My Account
+			</a>
+			<a href="#">All Categories</a>
+			<a href="#">Shop By Brand</a>
+			<a href="#">Best Sellers</a>
+			<a href="#">Clearance</a>
+			<a href="#">Deals</a>
+			<a href="#">Customer Service</a>
+		</nav>
+		<div class="header-promo">
+			<span class="promo-message">FREE SHIPPING on Orders over $50</span><span class="promo-message-optional">15% off your order of $40 or More!</span>
+			<span class="promo-site-info"><i class="far fa-question-circle"></i> Need Help? 1-800-644-8327</span>
+		</div>
+		<div class="header-content-container">
+			<a class="header-menu-icon">
+				<i class="fas fa-bars"></i>
+				<span class="menu-caption">Menu</span>
+			</a>
+			<img class="header-logo-mobile" src="/images/logo-mobile.png">
+			<img class="header-logo" src="/images/logo.png">
+			<a class="header-search-icon">
+				<i class="fas fa-search fa-flip-horizontal"></i>
+			</a>
+			<a class="header-cart-icon">
+				<i class="fas fa-shopping-cart"></i>
+				<span class="cart-quantity">0</span>
+			</a>
+			<a class="header-account-icon">
+				<i class="fas fa-user-circle"></i>
+				<span class="account-caption">My<br><span>Account&nbsp;&nbsp;<i class="fas fa-angle-down"></i></span>
+				</span>
+			</a>
+			<form class="header-search" action="https://www.botanicchoice.com/search/go" method="get" id="searchForm" onsubmit="return SLI.searchSubmit(event,this);">
+				<fieldset>
+					<i class="search-close fas fa-times"></i>
+					<input id="keywords" name="w" class="autocomplete clearOnFocus search-input" cleartext="Search by Keyword or Item #" autocomplete="off"
+						data-provide="rac" data-rac-loaded="true" type="text" placeholder="Search by Keyword or Item #">
+					<button class="search-button" type="submit" value="Search">
+						<i class="fas fa-search fa-flip-horizontal"></i>
+					</button>
+				</fieldset>
+			</form>
+		</div>
+		<nav class="header-menu">
+			<ul class="menu-container">
+				<li class="menu-item"><a>Shop By&nbsp;&nbsp;<i class="fas fa-angle-down"></i></a></li>
+				<li class="menu-item"><a>Clearance</a></li>
+				<li class="menu-item"><a>Best Sellers</a></li>
+				<li class="menu-item"><a>Order From Print Catalog</a></li>
+				<li class="menu-item"><a>New Products</a></li>
+				<li class="menu-item"><a>Deals</a></li>
+				<li class="menu-item"><a>Apply Web Code</a></li>
+			</ul>
+		</nav>
+	</header>
+	<div class="overlay"></div>
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+	<script src="/scripts.js"></script>
+</body>
+
+</html>
