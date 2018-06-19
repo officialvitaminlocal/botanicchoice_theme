@@ -1,11 +1,24 @@
-/// Variables
-$phone-small: "min-width: 320px";
+//////////////////
+/// Viewports ///
+////////////////
+
+//For Tiny Phones (like iPhone SE) ((Mostly bug Fixes))
+$phone-small: "max-width: 361px"; 
+
+//The rest
 $tablet: "min-width: 620px";
 $desktop-small: "min-width: 800px";
-//Styles
+$desktop-med: "min-width: 1020px";
+
+
+///////////////
+/// Styles ///
+/////////////
 header {
+    position:fixed;
+    width: 100%;
     font-size: 15px;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'PT Sans', sans-serif;
     background: white;
     .header-content-container {
         width: 100%;
@@ -25,7 +38,6 @@ header {
     .header-promo {
         width: 100%;
         font-size: 12px;
-        font-weight: bold;
         background: #747373;
         color: white;
         padding: 8px;
@@ -121,7 +133,8 @@ header {
             height: 60px;
             width: 160px;
             float: right;
-            color: darken(#067641, 2%);
+            //color: darken(#067641, 2%);
+            color: #747373;
             margin-top: 26px;
             padding: 0 10px;
             border-right: 1px solid rgba(0, 0, 0, .12);
@@ -164,7 +177,7 @@ header {
             position: absolute;
             top: 6px;
             right: -4px;
-            padding: 5px 8px;
+            padding: 4px 8px 6px;
             border-radius: 24px;
             background: #F16637;
             color: white;
@@ -175,9 +188,15 @@ header {
         }
     }
     .header-logo-mobile {
+        width:auto;
         margin: 6px 0 0;
         position: relative;
         left: calc(50% - 176px);
+        @media ($phone-small) {
+            width: 160px;
+            margin-top: 11px;
+            margin-left: 4px;
+        }
         @media ($tablet) {
             left: calc(50% - 212px);
         }
@@ -205,8 +224,9 @@ header {
         transition: height 200ms;
         z-index: 5;
         overflow: hidden;
-        border-top: 1px solid rgba(0, 0, 0, .08);
-        background: rgba(0, 0, 0, .02);
+        border: 1px solid rgba(0, 0, 0, .08);
+        border-width: 1px 0;
+        //background: rgba(0, 0, 0, .02);
         &.show {
             height: 60px;
         }
@@ -238,7 +258,7 @@ header {
             background: rgba(0, 0, 0, .04);
             @media ($desktop-small) {
                 width: 100%;
-                padding: 24px;
+                padding: 22px 24px 24px;
             }
         }
         button.search-button {
@@ -286,32 +306,100 @@ nav.header-mobile-menu {
     }
 }
 
-nav.header-menu {
-    width: 100%;
-    height: 32px;
-    background: #747373;
-    background: -moz-linear-gradient(top, #747373 0%, #919191 100%);
-    background: -webkit-linear-gradient(top, #747373 0%, #919191 100%);
-    background: linear-gradient(to bottom, #747373 0%, #919191 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#747373', endColorstr='#919191', GradientType=0);
-    .menu-container {
+nav.header-menu 
+{
+    display: none;
+    overflow: hidden;
+    @media ($desktop-small) {
+        display: block;
         width: 100%;
-        max-width: 1020px;
-        margin: auto;
-    }
-    .menu-item {
-        font-size: 12px;
         height: 32px;
-        color:white;
-        text-transform: uppercase;
-        display: inline-block;
-        -moz-transform: skew(-20deg);
-        -webkit-transform: skew(-20deg);
-        -o-transform: skew(-20deg);
-        -ms-transform: skew(-20deg);
-        transform: skew(-20deg);
-        .fa-angle-down {
-            font-size: 10px;
+        background: #747373;
+        background: -moz-linear-gradient(top, #747373 0%, #919191 100%);
+        background: -webkit-linear-gradient(top, #747373 0%, #919191 100%);
+        background: linear-gradient(to bottom, #747373 0%, #919191 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#747373', endColorstr='#919191', GradientType=0);
+        .menu-container {
+            width: 100%;
+            min-width: 1020px;
+            max-width: 1020px;
+            margin: auto;
+            font-size: 0px;
+        }
+        .menu-item {
+            font-size: 13px;
+            color: white;
+            text-transform: uppercase;
+            display: inline-block;
+            -moz-transform: skew(-20deg);
+            -webkit-transform: skew(-20deg);
+            -o-transform: skew(-20deg);
+            -ms-transform: skew(-20deg);
+            transform: skew(-20deg);
+            vertical-align: center;
+            padding: 4px 0;
+            height: 24px;
+            text-align: center;
+            border-left: 1px solid rgba(255, 255, 255, .48);
+            transition: all 120ms;
+            &:hover {
+                background: rgba(0,0,0,.24);
+                transition: all 120ms;
+            }
+            &:nth-of-type(1) {
+                width: 112px;
+                border: 0;
+            }
+            &:nth-of-type(2) {
+                width: 116px;
+            }
+            &:nth-of-type(3) {
+                width: 120px;
+            }
+            &:nth-of-type(4) {
+                width: 220px;
+            }
+            &:nth-of-type(5) {
+                width: 136px;
+                background: #00A14B;
+                &:hover {
+                    background: darken(#00A14B,6%);
+                }
+            }
+            &:nth-of-type(6) {
+                width: 72px;
+                background: #00AEEF;
+                &:hover {
+                    background: darken(#00AEEF,6%);
+                }
+            }
+            &.menu-special {
+                //margin: -12px 0;
+                //padding: 6px 8px;
+                border-left: 4px solid white;
+                font-weight: bold;
+                transition: background-color 200ms;
+                &:nth-of-type(7) {
+                    width: 164px;
+                    border-right: 4px solid white;
+                    background: #F68A1E;
+                    &:hover {
+                        background: darken(#F68A1E,8%);
+                    }
+                }
+            }
+            a {
+                -moz-transform: skew(20deg);
+                -webkit-transform: skew(20deg);
+                -o-transform: skew(20deg);
+                -ms-transform: skew(20deg);
+                transform: skew(20deg);
+                display: inline-block;
+                padding: 5px 0;
+            }
+            .fa-angle-down {
+                font-size: 10px;
+            }
         }
     }
 }
@@ -322,4 +410,5 @@ div.overlay {
     height: 100vh;
     background: rgba(0, 0, 0, .48);
     z-index: 0;
+    display: none;
 }
